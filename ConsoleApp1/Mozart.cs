@@ -28,7 +28,7 @@ namespace ConsoleApp1
                     break;
             }
 
-            return null; //unreachable code, but needed to satisfy the compiler
+            return Path.Combine(directory, "piano"); //unreachable code, but needed to satisfy the compiler
         }
 
 
