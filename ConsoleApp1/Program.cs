@@ -7,81 +7,85 @@ namespace ConsoleApp1
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine(AddAndMultiply(2, 4, 5));
-            Console.WriteLine(CtoF(0));
-            Console.WriteLine(CtoF(100));
-            Console.WriteLine(CtoF(-300));
-            Console.WriteLine(ElementaryOperations(3, 8));
-            Console.WriteLine(IsResultTheSame(2 + 2, 2 * 2));
-            Console.WriteLine(IsResultTheSame(9 / 3, 16 - 1));
-            Console.WriteLine(ModuloOperations(8, 5, 2));
-            Console.WriteLine(CubeOf(2));
-            Console.WriteLine(CubeOf(-5.5));
-            Console.WriteLine(SwapTwoNumbers(87, 45));
-            Console.WriteLine(SwapTwoNumbers(-13, 2));
-            Console.WriteLine(AbsoluteValue(6832));
-            Console.WriteLine(AbsoluteValue(-392));
-            Console.WriteLine(DivisibleBy2Or3(15, 30));
-            Console.WriteLine(DivisibleBy2Or3(2, 90));
-            Console.WriteLine(DivisibleBy2Or3(7, 12));
-            Console.WriteLine(IfConsistsOfUppercaseLetters("xyz"));
-            Console.WriteLine(IfConsistsOfUppercaseLetters("DOG"));
-            Console.WriteLine(IfConsistsOfUppercaseLetters("L9#"));
-            Console.WriteLine(IfGreaterThanThirdOne([2, 7, 12]));
-            Console.WriteLine(IfGreaterThanThirdOne([-5, -8, 50]));
-            Console.WriteLine(IfNumberIsEven(721));
-            Console.WriteLine(IfNumberIsEven(1248));
-            Console.WriteLine(IfSortedAscending([3, 7, 10]));
-            Console.WriteLine(IfSortedAscending([74, 62, 99]));
-            Console.WriteLine(PositiveNegativeOrZero(5.24));
-            Console.WriteLine(PositiveNegativeOrZero(0.0));
-            Console.WriteLine(PositiveNegativeOrZero(-994.53));
-            Console.WriteLine(IfYearIsLeap(2016));
-            Console.WriteLine(IfYearIsLeap(2018));
-            Console.WriteLine(NumberTable());
-            Console.WriteLine(Loops.TheBiggestNumber([190, 291, 145, 209, 280, 200]));
-            Console.WriteLine(Loops.TheBiggestNumber([-9, -2, -7, -8, -4]));
-            Console.WriteLine(Loops.Two7sNextToEachOther([8, 2, 5, 7, 9, 0, 7, 7, 3, 1]));
-            Console.WriteLine(Loops.Two7sNextToEachOther([9, 4, 5, 3, 7, 7, 7, 3, 2, 5, 7, 7]));
-            Console.WriteLine(Loops.ThreeIncreasingAdjacent([45, 23, 44, 68, 65, 70, 80, 81, 82]));
-            Console.WriteLine(Loops.ThreeIncreasingAdjacent([7, 3, 5, 8, 9, 3, 1, 4]));
-            int[] arr = Loops.SieveOfEratosthenes(30);
-            foreach (int num in arr)
-            {
-                Console.WriteLine(num + ", ");
-            }
-            Console.WriteLine(Loops.ExtractString("##abc##def"));
-            Console.WriteLine(Loops.ExtractString("12####78"));
-            Console.WriteLine(Loops.ExtractString("gar##d#en"));
-            Console.WriteLine(Loops.ExtractString("++##--##++"));
-            //Console.WriteLine(Loops.FullSequenceOfLetters("ds"));
-            //Console.WriteLine(Loops.FullSequenceOfLetters("or"));
-            Console.WriteLine(Loops.SumAndAverage(11, 66));
-            Console.WriteLine(Loops.SumAndAverage(-10, 0));
-            //Console.WriteLine(Loops.DrawTriangle());
-            Console.WriteLine(Loops.ToThePowerOf(-2, 3));
-            Console.WriteLine(Loops.ToThePowerOf(5, 5));
-            Console.WriteLine(Strings.AddSeparator("ABCD", "^"));
-            Console.WriteLine(Strings.AddSeparator("chocolate", "-"));
-            Console.WriteLine(Strings.IsPalindrome("eye"));
-            Console.WriteLine(Strings.IsPalindrome("home"));
-            Console.WriteLine(Strings.LengthOfAString("computer"));
-            Console.WriteLine(Strings.LengthOfAString("ice cream"));
-            Console.WriteLine(Strings.StringInReverseOrder("qwerty"));
-            Console.WriteLine(Strings.StringInReverseOrder("oe93 kr"));
-            Console.WriteLine(Strings.NumberOfWords("This is sample sentence"));
-            Console.WriteLine(Strings.NumberOfWords("OK"));
-            Console.WriteLine(Strings.RevertWordsOrder("John Doe."));
-            Console.WriteLine(Strings.RevertWordsOrder("A, B. C"));
-            Console.WriteLine(Strings.HowManyOccurrences("do it now", "do"));
-            Console.WriteLine(Strings.HowManyOccurrences("empty", "d"));
-            Console.WriteLine(Strings.SortCharactersDescending("onomatopoeia"));
-            Console.WriteLine(Strings.SortCharactersDescending("fohjwf42os"));
-            Console.WriteLine(Strings.CompressString("kkkktttrrrrrrrrrr"));
-            Console.WriteLine(Strings.CompressString("p555ppp7www"));
-            Die die = new Die(4);
-            Console.WriteLine(die.RollAmount);
+            //Console.WriteLine(AddAndMultiply(2, 4, 5));
+            //Console.WriteLine(CtoF(0));
+            //Console.WriteLine(CtoF(100));
+            //Console.WriteLine(CtoF(-300));
+            //Console.WriteLine(ElementaryOperations(3, 8));
+            //Console.WriteLine(IsResultTheSame(2 + 2, 2 * 2));
+            //Console.WriteLine(IsResultTheSame(9 / 3, 16 - 1));
+            //Console.WriteLine(ModuloOperations(8, 5, 2));
+            //Console.WriteLine(CubeOf(2));
+            //Console.WriteLine(CubeOf(-5.5));
+            //Console.WriteLine(SwapTwoNumbers(87, 45));
+            //Console.WriteLine(SwapTwoNumbers(-13, 2));
+            //Console.WriteLine(AbsoluteValue(6832));
+            //Console.WriteLine(AbsoluteValue(-392));
+            //Console.WriteLine(DivisibleBy2Or3(15, 30));
+            //Console.WriteLine(DivisibleBy2Or3(2, 90));
+            //Console.WriteLine(DivisibleBy2Or3(7, 12));
+            //Console.WriteLine(IfConsistsOfUppercaseLetters("xyz"));
+            //Console.WriteLine(IfConsistsOfUppercaseLetters("DOG"));
+            //Console.WriteLine(IfConsistsOfUppercaseLetters("L9#"));
+            //Console.WriteLine(IfGreaterThanThirdOne([2, 7, 12]));
+            //Console.WriteLine(IfGreaterThanThirdOne([-5, -8, 50]));
+            //Console.WriteLine(IfNumberIsEven(721));
+            //Console.WriteLine(IfNumberIsEven(1248));
+            //Console.WriteLine(IfSortedAscending([3, 7, 10]));
+            //Console.WriteLine(IfSortedAscending([74, 62, 99]));
+            //Console.WriteLine(PositiveNegativeOrZero(5.24));
+            //Console.WriteLine(PositiveNegativeOrZero(0.0));
+            //Console.WriteLine(PositiveNegativeOrZero(-994.53));
+            //Console.WriteLine(IfYearIsLeap(2016));
+            //Console.WriteLine(IfYearIsLeap(2018));
+            //Console.WriteLine(NumberTable());
+            //Console.WriteLine(Loops.TheBiggestNumber([190, 291, 145, 209, 280, 200]));
+            //Console.WriteLine(Loops.TheBiggestNumber([-9, -2, -7, -8, -4]));
+            //Console.WriteLine(Loops.Two7sNextToEachOther([8, 2, 5, 7, 9, 0, 7, 7, 3, 1]));
+            //Console.WriteLine(Loops.Two7sNextToEachOther([9, 4, 5, 3, 7, 7, 7, 3, 2, 5, 7, 7]));
+            //Console.WriteLine(Loops.ThreeIncreasingAdjacent([45, 23, 44, 68, 65, 70, 80, 81, 82]));
+            //Console.WriteLine(Loops.ThreeIncreasingAdjacent([7, 3, 5, 8, 9, 3, 1, 4]));
+            //int[] arr = Loops.SieveOfEratosthenes(30);
+            //foreach (int num in arr)
+            //{
+            //    Console.WriteLine(num + ", ");
+            //}
+            //Console.WriteLine(Loops.ExtractString("##abc##def"));
+            //Console.WriteLine(Loops.ExtractString("12####78"));
+            //Console.WriteLine(Loops.ExtractString("gar##d#en"));
+            //Console.WriteLine(Loops.ExtractString("++##--##++"));
+            ////Console.WriteLine(Loops.FullSequenceOfLetters("ds"));
+            ////Console.WriteLine(Loops.FullSequenceOfLetters("or"));
+            //Console.WriteLine(Loops.SumAndAverage(11, 66));
+            //Console.WriteLine(Loops.SumAndAverage(-10, 0));
+            ////Console.WriteLine(Loops.DrawTriangle());
+            //Console.WriteLine(Loops.ToThePowerOf(-2, 3));
+            //Console.WriteLine(Loops.ToThePowerOf(5, 5));
+            //Console.WriteLine(Strings.AddSeparator("ABCD", "^"));
+            //Console.WriteLine(Strings.AddSeparator("chocolate", "-"));
+            //Console.WriteLine(Strings.IsPalindrome("eye"));
+            //Console.WriteLine(Strings.IsPalindrome("home"));
+            //Console.WriteLine(Strings.LengthOfAString("computer"));
+            //Console.WriteLine(Strings.LengthOfAString("ice cream"));
+            //Console.WriteLine(Strings.StringInReverseOrder("qwerty"));
+            //Console.WriteLine(Strings.StringInReverseOrder("oe93 kr"));
+            //Console.WriteLine(Strings.NumberOfWords("This is sample sentence"));
+            //Console.WriteLine(Strings.NumberOfWords("OK"));
+            //Console.WriteLine(Strings.RevertWordsOrder("John Doe."));
+            //Console.WriteLine(Strings.RevertWordsOrder("A, B. C"));
+            //Console.WriteLine(Strings.HowManyOccurrences("do it now", "do"));
+            //Console.WriteLine(Strings.HowManyOccurrences("empty", "d"));
+            //Console.WriteLine(Strings.SortCharactersDescending("onomatopoeia"));
+            //Console.WriteLine(Strings.SortCharactersDescending("fohjwf42os"));
+            //Console.WriteLine(Strings.CompressString("kkkktttrrrrrrrrrr"));
+            //Console.WriteLine(Strings.CompressString("p555ppp7www"));
+            //Die die = new Die(3);
+            //Console.WriteLine(die.RollAmount);
+           Mozart.PlaySpecificFile();
         }
+
+
+
 
         static double AddAndMultiply(int first, int second, int third)
         {

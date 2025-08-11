@@ -7,4 +7,1116 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Content Include="bin\Debug\net8.0\ConsoleApp1.deps.json" />
+    <Content Include="bin\Debug\net8.0\ConsoleApp1.runtimeconfig.json" />
+    <Content Include="bin\Debug\net8.0\Data\minuet0-10.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet0-11.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet0-12.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet0-2.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet0-3.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet0-4.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet0-5.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet0-6.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet0-7.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet0-8.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet0-9.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet1-10.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet1-11.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet1-12.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet1-2.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet1-3.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet1-4.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet1-5.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet1-6.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet1-7.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet1-8.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet1-9.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet10-10.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet10-11.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet10-12.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet10-2.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet10-3.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet10-4.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet10-5.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet10-6.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet10-7.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet10-8.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet10-9.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet11-10.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet11-11.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet11-12.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet11-2.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet11-3.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet11-4.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet11-5.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet11-6.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet11-7.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet11-8.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet11-9.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet12-10.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet12-11.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet12-12.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet12-2.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet12-3.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet12-4.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet12-5.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet12-6.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet12-7.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet12-8.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet12-9.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet13-10.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet13-11.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet13-12.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet13-2.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet13-3.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet13-4.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet13-5.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet13-6.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet13-7.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet13-8.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet13-9.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet14-10.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet14-11.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet14-12.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet14-2.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet14-3.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet14-4.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet14-5.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet14-6.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet14-7.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet14-8.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet14-9.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet15-10.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet15-11.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet15-12.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet15-2.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet15-3.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet15-4.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet15-5.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet15-6.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet15-7.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet15-8.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet15-9.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet2-10.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet2-11.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet2-12.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet2-2.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet2-3.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet2-4.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet2-5.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet2-6.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet2-7.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet2-8.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet2-9.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet3-10.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet3-11.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet3-12.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet3-2.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet3-3.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet3-4.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet3-5.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet3-6.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet3-7.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet3-8.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet3-9.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet4-10.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet4-11.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet4-12.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet4-2.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet4-3.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet4-4.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet4-5.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet4-6.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet4-7.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet4-8.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet4-9.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet5-10.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet5-11.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet5-12.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet5-2.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet5-3.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet5-4.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet5-5.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet5-6.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet5-7.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet5-8.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet5-9.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet6-10.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet6-11.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet6-12.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet6-2.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet6-3.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet6-4.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet6-5.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet6-6.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet6-7.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet6-8.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet6-9.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet7-10.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet7-11.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet7-12.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet7-2.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet7-3.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet7-4.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet7-5.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet7-6.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet7-7.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet7-8.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet7-9.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet8-10.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet8-11.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet8-12.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet8-2.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet8-3.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet8-4.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet8-5.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet8-6.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet8-7.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet8-8.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet8-9.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet9-10.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet9-11.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet9-12.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet9-2.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet9-3.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet9-4.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet9-5.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet9-6.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet9-7.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet9-8.wav" />
+    <Content Include="bin\Debug\net8.0\Data\minuet9-9.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio0-1.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio0-2.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio0-3.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio0-4.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio0-5.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio0-6.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio1-1.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio1-2.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio1-3.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio1-4.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio1-5.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio1-6.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio10-1.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio10-2.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio10-3.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio10-4.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio10-5.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio10-6.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio11-1.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio11-2.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio11-3.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio11-4.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio11-5.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio11-6.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio12-1.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio12-2.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio12-3.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio12-4.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio12-5.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio12-6.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio13-1.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio13-2.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio13-3.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio13-4.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio13-5.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio13-6.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio14-1.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio14-2.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio14-3.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio14-4.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio14-5.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio14-6.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio15-1.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio15-2.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio15-3.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio15-4.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio15-5.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio15-6.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio2-1.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio2-2.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio2-3.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio2-4.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio2-5.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio2-6.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio3-1.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio3-2.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio3-3.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio3-4.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio3-5.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio3-6.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio4-1.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio4-2.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio4-3.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio4-4.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio4-5.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio4-6.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio5-1.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio5-2.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio5-3.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio5-4.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio5-5.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio5-6.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio6-1.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio6-2.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio6-3.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio6-4.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio6-5.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio6-6.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio7-1.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio7-2.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio7-3.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio7-4.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio7-5.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio7-6.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio8-1.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio8-2.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio8-3.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio8-4.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio8-5.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio8-6.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio9-1.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio9-2.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio9-3.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio9-4.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio9-5.wav" />
+    <Content Include="bin\Debug\net8.0\Data\trio9-6.wav" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Data\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="bin\Debug\net8.0\ConsoleApp1.dll" />
+    <None Include="bin\Debug\net8.0\ConsoleApp1.exe" />
+    <None Include="bin\Debug\net8.0\ConsoleApp1.pdb" />
+    <None Include="bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Windows.Extensions.dll" />
+    <None Include="bin\Debug\net8.0\System.Windows.Extensions.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Windows.Extensions" Version="9.0.8" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Data\minuet0-10.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet0-11.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet0-12.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet0-2.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet0-3.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet0-4.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet0-5.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet0-6.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet0-7.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet0-8.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet0-9.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet1-10.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet1-11.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet1-12.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet1-2.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet1-3.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet1-4.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet1-5.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet1-6.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet1-7.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet1-8.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet1-9.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet10-10.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet10-11.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet10-12.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet10-2.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet10-3.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet10-4.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet10-5.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet10-6.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet10-7.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet10-8.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet10-9.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet11-10.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet11-11.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet11-12.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet11-2.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet11-3.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet11-4.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet11-5.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet11-6.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet11-7.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet11-8.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet11-9.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet12-10.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet12-11.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet12-12.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet12-2.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet12-3.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet12-4.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet12-5.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet12-6.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet12-7.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet12-8.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet12-9.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet13-10.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet13-11.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet13-12.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet13-2.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet13-3.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet13-4.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet13-5.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet13-6.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet13-7.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet13-8.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet13-9.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet14-10.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet14-11.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet14-12.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet14-2.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet14-3.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet14-4.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet14-5.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet14-6.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet14-7.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet14-8.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet14-9.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet15-10.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet15-11.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet15-12.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet15-2.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet15-3.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet15-4.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet15-5.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet15-6.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet15-7.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet15-8.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet15-9.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet2-10.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet2-11.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet2-12.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet2-2.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet2-3.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet2-4.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet2-5.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet2-6.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet2-7.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet2-8.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet2-9.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet3-10.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet3-11.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet3-12.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet3-2.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet3-3.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet3-4.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet3-5.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet3-6.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet3-7.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet3-8.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet3-9.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet4-10.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet4-11.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet4-12.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet4-2.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet4-3.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet4-4.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet4-5.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet4-6.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet4-7.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet4-8.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet4-9.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet5-10.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet5-11.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet5-12.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet5-2.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet5-3.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet5-4.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet5-5.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet5-6.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet5-7.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet5-8.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet5-9.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet6-10.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet6-11.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet6-12.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet6-2.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet6-3.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet6-4.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet6-5.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet6-6.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet6-7.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet6-8.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet6-9.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet7-10.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet7-11.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet7-12.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet7-2.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet7-3.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet7-4.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet7-5.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet7-6.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet7-7.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet7-8.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet7-9.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet8-10.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet8-11.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet8-12.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet8-2.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet8-3.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet8-4.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet8-5.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet8-6.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet8-7.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet8-8.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet8-9.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet9-10.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet9-11.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet9-12.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet9-2.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet9-3.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet9-4.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet9-5.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet9-6.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet9-7.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet9-8.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\minuet9-9.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio0-1.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio0-2.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio0-3.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio0-4.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio0-5.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio0-6.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio1-1.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio1-2.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio1-3.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio1-4.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio1-5.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio1-6.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio10-1.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio10-2.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio10-3.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio10-4.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio10-5.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio10-6.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio11-1.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio11-2.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio11-3.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio11-4.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio11-5.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio11-6.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio12-1.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio12-2.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio12-3.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio12-4.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio12-5.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio12-6.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio13-1.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio13-2.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio13-3.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio13-4.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio13-5.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio13-6.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio14-1.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio14-2.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio14-3.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio14-4.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio14-5.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio14-6.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio15-1.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio15-2.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio15-3.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio15-4.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio15-5.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio15-6.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio2-1.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio2-2.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio2-3.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio2-4.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio2-5.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio2-6.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio3-1.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio3-2.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio3-3.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio3-4.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio3-5.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio3-6.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio4-1.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio4-2.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio4-3.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio4-4.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio4-5.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio4-6.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio5-1.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio5-2.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio5-3.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio5-4.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio5-5.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio5-6.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio6-1.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio6-2.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio6-3.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio6-4.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio6-5.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio6-6.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio7-1.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio7-2.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio7-3.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio7-4.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio7-5.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio7-6.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio8-1.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio8-2.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio8-3.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio8-4.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio8-5.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio8-6.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio9-1.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio9-2.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio9-3.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio9-4.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio9-5.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\trio9-6.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

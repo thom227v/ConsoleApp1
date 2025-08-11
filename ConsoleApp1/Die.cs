@@ -10,24 +10,41 @@ namespace ConsoleApp1
     {
         public int RollAmount { get; set; }
 
+        public int CombinedRoll { get; set; }
+
+
         public Die(int amount)
         {
-            Random random = new Random();
-            int count = 0;
-            bool yatzy = true;
-            do
+            if (amount == 2)
             {
-                int total = 0;
-                for (int i = 0; i < amount; i++)
-                {
-                    total += random.Next(1, 7);
+                Random random = new Random();
 
-                    RollAmount++;
-                }
-                if (total == (amount*6))
-                    yatzy = false;
+                CombinedRoll = random.Next(1, 7) + random.Next(1, 7);
             }
-            while (yatzy);
+            else
+            {
+                Random random = new Random();
+                bool yatzy = true;
+                do
+                {
+                    int total = 0;
+                    for (int i = 0; i < amount; i++)
+                    {
+                        total += random.Next(1, 7);
+
+                        RollAmount++;
+                    }
+                    if (total == (amount * 6))
+                        yatzy = false;
+                }
+                while (yatzy);
+            }
+        }
+
+        public Die()
+        {
+            Random random = new Random();
+            CombinedRoll = random.Next(1, 7);
         }
     }
 }
