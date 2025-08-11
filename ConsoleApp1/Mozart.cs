@@ -11,13 +11,12 @@ namespace ConsoleApp1
     {
         public static void PlaySpecificFile()
         {
-            Die die = new Die(2);
-            Die dice = new Die();
 
             string directory = Context.GetDataDirectory();
 
             for (int i = 0; i < 15; i++)
             {
+                Die die = new Die(2);
                 string fileName = Path.Combine(directory, $"minuet{i}-{die.CombinedRoll}.wav");
                 using SoundPlayer player = new SoundPlayer(fileName);
                 player.PlaySync();
@@ -25,6 +24,7 @@ namespace ConsoleApp1
 
             for (int i = 0; i < 15; i++)
             {
+                Die dice = new Die();
                 string fileName = Path.Combine(directory, $"trio{i}-{dice.CombinedRoll}.wav");
                 using SoundPlayer player = new SoundPlayer(fileName);
                 player.PlaySync();
