@@ -79,6 +79,8 @@ namespace ConsoleApp1
             Console.WriteLine(Strings.SortCharactersDescending("fohjwf42os"));
             Console.WriteLine(Strings.CompressString("kkkktttrrrrrrrrrr"));
             Console.WriteLine(Strings.CompressString("p555ppp7www"));
+            Die die = new Die(4);
+            Console.WriteLine(die.RollAmount);
         }
 
         static double AddAndMultiply(int first, int second, int third)
