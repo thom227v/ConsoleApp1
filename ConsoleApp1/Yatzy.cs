@@ -14,7 +14,7 @@ namespace ConsoleApp1
             {
                 foreach (var player in gameState.players)
                 {
-                    Console.WriteLine($"\n--- {player.name}'s turn ---");   
+                    Console.WriteLine($"\n--- {player.name}'s turn ---");
                     Die die = new Die();                                     // roll players first dice
                     DisplayDice();
                     int rerolls = 0;
@@ -29,7 +29,7 @@ namespace ConsoleApp1
                         string input = Console.ReadLine();
                         if (input.Trim().ToLower() == "stop") // if player ends game
                         {
-                            GameChoosing(currentDice);
+                            GameChoosing(currentDice, player);
                             break;
                         }
                         else if (input.Trim().ToLower() == "reroll") // if player rerolls all dice
@@ -42,7 +42,7 @@ namespace ConsoleApp1
                         else // reroll dice using indexing
                         {
                             currentDice = MatchWhichDicesToRemove();
-                            die.DiceToRoll(0, currentDice); 
+                            die.DiceToRoll(0, currentDice);
                             currentDice = Context.ReadCurrentDiceValues();
                             DisplayDice();
                             rerolls++;
@@ -50,8 +50,8 @@ namespace ConsoleApp1
                     }
                     if (rerolls == 4) // if player is out of rerolls, force to make a choice
                     {
-                        Console.WriteLine($"{player.name}, youu no more rolls left, please choose a category to score:");
-                        GameChoosing(currentDice);
+                        Console.WriteLine($"{player.name}, youu no more rolls left, please choose a category to score: ");
+                        GameChoosing(currentDice, player);
                     }
                     Context.SaveGameState(gameState);
                 }
@@ -87,7 +87,7 @@ namespace ConsoleApp1
                 {
                     try // try and remove dice from list if it exists 
                     {
-                        dice.RemoveAt(inputValue - subtractAmount); 
+                        dice.RemoveAt(inputValue - subtractAmount);
                         subtractAmount++;
                         gameChoiceState = false;
                     }
@@ -112,77 +112,149 @@ namespace ConsoleApp1
             }
         }
 
-        public static void GameChoosing(List<int> dice)
+        public static void GameChoosing(List<int> dice, PlayerState player = null)
         {
-            Console.WriteLine("What do you choose?");
-            Console.WriteLine("""
-                1 for 1's
-                2 for 2's
-                3 for 3's
-                4 for 4's
-                5 for 5's
-                6 for 6's
-                7 for 1 pair
-                8 for 2 pair
-                9 for three of a kind
-                10 for four of a kind
-                11 for small straight
-                12 for big straight
-                13 for house
-                14 for chance 
-                15 for YATZY
-                """);
-
-            switch (Console.ReadLine())
+            if (player == null)
             {
-                case "1":
-                    MatchTypes(1, dice, (leaderboard, score) => leaderboard.Ones = score);
-                    return;
-                case "2":
-                    MatchTypes(2, dice, (leaderboard, score) => leaderboard.Twos = score);
-                    return;
-                case "3":
-                    MatchTypes(3, dice, (leaderboard, score) => leaderboard.Threes = score);
-                    return;
-                case "4":
-                    MatchTypes(4, dice, (leaderboard, score) => leaderboard.Fours = score);
-                    return;
-                case "5":
-                    MatchTypes(5, dice, (leaderboard, score) => leaderboard.Fives = score);
-                    return;
-                case "6":
-                    MatchTypes(6, dice, (leaderboard, score) => leaderboard.Sixes = score);
-                    return;
-                case "7":
-                    MatchPairs(dice);
-                    return;
-                case "8":
-                    MatchTwoPairs(dice);
-                    return;
-                case "9":
-                    MatchThreeOfAKind(dice);
-                    return;
-                case "10":
-                    MatchFourOfAKind(dice);
-                    return;
-                case "11":
-                    MatchSmallStraight(dice);
-                    return;
-                case "12":
-                    MatchLargeStraight(dice);
-                    return;
-                case "13":
-                    MatchFullHouse(dice);
-                    return;
-                case "14":
-                    MatchChance(dice);
-                    return;
-                case "15":
-                    MatchYatzy(dice);
-                    return;
+                Console.WriteLine("Error: player does not have any context");
+                return;
+            }
+            // build list of available options left for the player
+            List<(string key, string label)> available = new List<(string key, string label)>(); // key for input verification and label for readability for user
+            if (player.choices.Ones == 0) available.Add(("1", "1's"));
+            if (player.choices.Twos == 0) available.Add(("2", "2's"));
+            if (player.choices.Threes == 0) available.Add(("3", "3's"));
+            if (player.choices.Fours == 0) available.Add(("4", "4's"));
+            if (player.choices.Fives == 0) available.Add(("5", "5's"));
+            if (player.choices.Sixes == 0) available.Add(("6", "6's"));
+            if (player.choices.Pair == 0) available.Add(("7", "1 pair"));
+            if (player.choices.TwoPairs == 0) available.Add(("8", "2 pair"));
+            if (player.choices.ThreeOfAKind == 0) available.Add(("9", "three of a kind"));
+            if (player.choices.FourOfAKind == 0) available.Add(("10", "four of a kind"));
+            if (player.choices.SmallStraight == 0) available.Add(("11", "small straight"));
+            if (player.choices.LargeStraight == 0) available.Add(("12", "big straight"));
+            if (player.choices.FullHouse == 0) available.Add(("13", "house"));
+            if (player.choices.Chance == 0) available.Add(("14", "chance"));
+            if (player.choices.Yatzy == 0) available.Add(("15", "YATZY"));
+
+            if (available.Count == 0)
+            {
+                Console.WriteLine("No available choice left for you to choose. Your turn is skipped.");
+                return;
+            }
+            while (true)
+            {
+                Console.WriteLine("What do you choose:");
+                foreach (var (key, label) in available)
+                    Console.WriteLine($"{key} for {label}");
+                string input = Console.ReadLine();
+                if (!available.Any(a => a.key == input))
+                {
+                    Console.WriteLine("Invalid or already used category. Please choose from the available options.");
+                    continue;
+                }
+                //score logic
+                switch (input)
+                {
+                    case "1":
+                        player.choices.Ones = dice.Count(d => d == 1) * 1;
+                        break;
+                    case "2":
+                        player.choices.Twos = dice.Count(d => d == 2) * 2;
+                        break;
+                    case "3":
+                        player.choices.Threes = dice.Count(d => d == 3) * 3;
+                        break;
+                    case "4":
+                        player.choices.Fours = dice.Count(d => d == 4) * 4;
+                        break;
+                    case "5":
+                        player.choices.Fives = dice.Count(d => d == 5) * 5;
+                        break;
+                    case "6":
+                        player.choices.Sixes = dice.Count(d => d == 6) * 6;
+                        break;
+                    case "7": 
+                        player.choices.Pair = 0;
+                        for (int i = 6; i >= 1; i--)
+                        {
+                            if (dice.Count(x => x == i) >= 2)
+                            {
+                                player.choices.Pair = i * 2;
+                                break;
+                            }
+                        }
+                        break;
+                    case "8": 
+                        int firstPair = 0, secondPair = 0;
+                        for (int i = 6; i >= 1; i--)
+                        {
+                            if (dice.Count(x => x == i) >= 2)
+                            {
+                                if (firstPair == 0) firstPair = i;
+                                else if (secondPair == 0 && i != firstPair) { secondPair = i; break; }
+                            }
+                        }
+                        if (firstPair != 0 && secondPair != 0)
+                            player.choices.TwoPairs = firstPair * 2 + secondPair * 2;
+                        else
+                            player.choices.TwoPairs = 0;
+                        break;
+                    case "9": 
+                        player.choices.ThreeOfAKind = 0;
+                        for (int i = 6; i >= 1; i--)
+                        {
+                            if (dice.Count(x => x == i) >= 3)
+                            {
+                                player.choices.ThreeOfAKind = i * 3;
+                                break;
+                            }
+                        }
+                        break;
+                    case "10":
+                        player.choices.FourOfAKind = 0;
+                        for (int i = 6; i >= 1; i--)
+                        {
+                            if (dice.Count(x => x == i) >= 4)
+                            {
+                                player.choices.FourOfAKind = i * 4;
+                                break;
+                            }
+                        }
+                        break;
+                    case "11": 
+                        player.choices.SmallStraight = (new List<int> { 1, 2, 3, 4, 5 }.All(dice.Contains)) ? 15 : 0;
+                        break;
+                    case "12": 
+                        player.choices.LargeStraight = (new List<int> { 2, 3, 4, 5, 6 }.All(dice.Contains)) ? 20 : 0;
+                        break;
+                    case "13": 
+                        int three = 0, two = 0;
+                        for (int i = 6; i >= 1; i--)
+                        {
+                            if (dice.Count(x => x == i) >= 3 && three == 0) three = i;
+                            else if (dice.Count(x => x == i) >= 2 && i != three && two == 0) two = i;
+                        }
+                        player.choices.FullHouse = (three != 0 && two != 0) ? three * 3 + two * 2 : 0;
+                        break;
+                    case "14": 
+                        player.choices.Chance = dice.Sum();
+                        break;
+                    case "15": 
+                        player.choices.Yatzy = (dice.Distinct().Count() == 1) ? 50 : 0;
+                        break;
+                }
+                // check if player is intiltelt to bonus yet
+                if ((player.choices.Ones + player.choices.Twos + player.choices.Threes + player.choices.Fours + player.choices.Fives + player.choices.Sixes) >= 63)
+                    player.choices.Bonus = 50;
+                else
+                    player.choices.Bonus = 0;
+
+                // update the totalScore
+                player.totalScore = player.choices.Ones + player.choices.Twos + player.choices.Threes + player.choices.Fours + player.choices.Fives + player.choices.Sixes + player.choices.Bonus + player.choices.Pair + player.choices.TwoPairs + player.choices.ThreeOfAKind + player.choices.FourOfAKind + player.choices.SmallStraight + player.choices.LargeStraight + player.choices.FullHouse + player.choices.Chance + player.choices.Yatzy;
+                break;
             }
         }
-
 
         public static void MatchTypes(int type, List<int> dice, Action<Leaderboard, int> setScore) // need research
         {

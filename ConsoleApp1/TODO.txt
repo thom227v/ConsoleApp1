@@ -1,7 +1,16 @@
-Check if leaderboard is redundant
+Check if leaderboard is redundant, if so remove it
 
-Fix reroll (start using DiceToRoll() again)
+Fix reroll (start using DiceToRoll() again), instead of rolling all always, 
 
-Find better fix if user wants to reroll using indexes (index better if the user wants to go for straights)
+Fix when player wants to reroll using indexing, like 1 2 5
 
-reopening a game should not reset the game (unsure if does)
+make sure players cant pick the same name
+
+make sure players cant pick the same choice more than once 
+
+
+
+
+make it so game before hand checks if you even can make a choice, and if you can which ones, and if you cant make it so you cant make a choice, and there is nothing to do
+
+make it so somehow files are automatically included inside of the project
