@@ -18,6 +18,28 @@ namespace ConsoleApp1
     {
         public static void PlayYatzy()
         {
+
+            bool startGameStatus = true;
+            do
+            {
+            Console.WriteLine("Enter number of players 2-8");
+            string input = Console.ReadLine();
+            if (int.TryParse(input), out int numberOfPlayers) && numberOfPlayers >= 2 && numberOfPlayers <= 8)
+            {
+                Context.WriteCurrentNumberOfPlayers(numberOfPlayers);
+                ResetLeaderboard();
+                StartGame();
+            }
+            else
+            {
+                Console.WriteLine("Invalid input, please enter a number between 2 and 8.");
+                PlayYatzy();
+            }
+                
+            }
+            while (startGameStatus);
+
+
             Die die = new Die();
             int rollsLeft = 6;
             for (int i = 0; i < rollsLeft; i++)
@@ -106,27 +128,21 @@ namespace ConsoleApp1
             switch (Console.ReadLine())
             {
                 case "1":
-                    Console.WriteLine("Which type of die number should be inserted?");
                     MatchTypes(1, dice, (leaderboard, score) => leaderboard.Ones = score);
                     return;
                 case "2":
-                    Console.WriteLine("Which type of die number should be inserted?");
                     MatchTypes(2, dice, (leaderboard, score) => leaderboard.Twos = score);
                     return;
                 case "3":
-                    Console.WriteLine("Which type of die number should be inserted?");
                     MatchTypes(3, dice, (leaderboard, score) => leaderboard.Threes = score);
                     return;
                 case "4":
-                    Console.WriteLine("Which type of die number should be inserted?");
                     MatchTypes(4, dice, (leaderboard, score) => leaderboard.Fours = score);
                     return;
                 case "5":
-                    Console.WriteLine("Which type of die number should be inserted?");
                     MatchTypes(5, dice, (leaderboard, score) => leaderboard.Fives = score);
                     return;
                 case "6":
-                    Console.WriteLine("Which type of die number should be inserted?");
                     MatchTypes(6, dice, (leaderboard, score) => leaderboard.Sixes = score);
                     return;
                 case "7":
@@ -158,9 +174,7 @@ namespace ConsoleApp1
                     return;
             }
             PlayYatzy();
-
         }
-
 
 
         public static void MatchTypes(int type, List<int> dice, Action<Leaderboard, int> setScore) // need research
@@ -179,7 +193,7 @@ namespace ConsoleApp1
                 if (dice.Count(x => x == i) >= 2)
                 {
                     highestPair = i;
-                    Leaderboard leaderboard = new Leaderboard();
+                    Leaderboard leaderboard = Context.ReadCurrentLeaderboardValues();
                     leaderboard.Pair = highestPair * 2;
                     Context.WriteCurrentLeaderboardValues(leaderboard);
                     break;
@@ -215,7 +229,7 @@ namespace ConsoleApp1
                 int secondCount = dice.Count(x => x == secondHighestPair);
                 if (firstCount >= 2 && secondCount >= 2)
                 {
-                    Leaderboard leaderboard = new Leaderboard();
+                    Leaderboard leaderboard = Context.ReadCurrentLeaderboardValues();
                     leaderboard.TwoPairs = firstHighestPair * 2 + secondHighestPair * 2;
                     Context.WriteCurrentLeaderboardValues(leaderboard);
 
@@ -230,13 +244,14 @@ namespace ConsoleApp1
                 if (dice.Count(x => x == i) >= 3)
                 {
                     highest = i;
-                    Leaderboard leaderboard = new Leaderboard();
+                    Leaderboard leaderboard = Context.ReadCurrentLeaderboardValues();
                     leaderboard.ThreeOfAKind = highest * 3;
                     Context.WriteCurrentLeaderboardValues(leaderboard);
                     break;
                 }
             }
         }
+
         public static void MatchFourOfAKind(List<int> dice)
         {
             int highest = 0;
@@ -245,7 +260,7 @@ namespace ConsoleApp1
                 if (dice.Count(x => x == i) >= 4)
                 {
                     highest = i;
-                    Leaderboard leaderboard = new Leaderboard();
+                    Leaderboard leaderboard = Context.ReadCurrentLeaderboardValues();
                     leaderboard.FourOfAKind = highest * 4;
                     Context.WriteCurrentLeaderboardValues(leaderboard);
                     break;
@@ -258,7 +273,9 @@ namespace ConsoleApp1
             List<int> smallStraight = new List<int> { 1, 2, 3, 4, 5 };
             if (smallStraight.All(dice.Contains))
             {
-                Action<Leaderboard, int> setScore = (leaderboard, score) => leaderboard.SmallStraight = score;
+                Leaderboard leaderboard = Context.ReadCurrentLeaderboardValues();
+                leaderboard.SmallStraight = 1 + 2 + 3 + 4 + 5;
+                Context.WriteCurrentLeaderboardValues(leaderboard);
             }
         }
 
@@ -267,30 +284,83 @@ namespace ConsoleApp1
             List<int> largeStraight = new List<int> { 2, 3, 4, 5, 6 };
             if (largeStraight.All(dice.Contains))
             {
-                Action<Leaderboard, int> setScore = (leaderboard, score) => leaderboard.LargeStraight = score;
+                Leaderboard leaderboard = Context.ReadCurrentLeaderboardValues();
+                leaderboard.LargeStraight = 2 + 3 + 4 + 5 + 6;
+                Context.WriteCurrentLeaderboardValues(leaderboard);
             }
         }
 
         public static void MatchFullHouse(List<int> dice)
         {
-            var groupedDice = dice.GroupBy(x => x).ToDictionary(g => g.Key, g => g.Count());
-            if (groupedDice.Count == 2 && groupedDice.Any(g => g.Value == 3))
+            int firstHighestNum = 0;
+            for (int i = 6; i >= 1; i--)
             {
-                Action<Leaderboard, int> setScore = (leaderboard, score) => leaderboard.FullHouse = score;
+                if (dice.Count(x => x == i) >= 2)
+                {
+                    firstHighestNum = i;
+                }
             }
-        }
+            int secondHighestNum = 0;
+            for (int i = firstHighestNum; i >= 1; i--)
+            {
+                if (dice.Count(x => x == i) >= 3)
+                {
+                    secondHighestNum = i;
+
+                }
+            }
+
+            if (firstHighestNum == 0 || secondHighestNum == 0)
+            {
+                int firstHighestNum2 = 0;
+                for (int i = 6; i >= 1; i--)
+                {
+                    if (dice.Count(x => x == i) >= 3)
+                    {
+                        firstHighestNum2 = i;
+                    }
+                }
+                int secondHighestNum2 = 0;
+                for (int i = firstHighestNum2; i >= 1; i--)
+                {
+                    if (dice.Count(x => x == i) >= 2)
+                    {
+                        secondHighestNum2 = i;
+                    }
+                }
+
+                if (firstHighestNum2 == 0 || secondHighestNum2 == 0)
+                {
+                    Console.WriteLine("You do not have a full house.");
+                    return;
+                }
+                else
+                {
+                    Leaderboard leaderboard2 = Context.ReadCurrentLeaderboardValues();
+                    leaderboard2.FullHouse = firstHighestNum2 * 3 + secondHighestNum2 * 2;
+                    Context.WriteCurrentLeaderboardValues(leaderboard2);
+                    return;
+                }
+            }
+                Leaderboard leaderboard = Context.ReadCurrentLeaderboardValues();
+                leaderboard.FullHouse = firstHighestNum * 2 + secondHighestNum * 3;
+                Context.WriteCurrentLeaderboardValues(leaderboard);
+                return;
+            }
 
         public static void MatchChance(List<int> dice)
         {
             int total = dice.Sum();
-            Action<Leaderboard, int> setScore = (leaderboard, score) => leaderboard.Chance = score;
+            Leaderboard leaderboard = Context.ReadCurrentLeaderboardValues();
+            leaderboard.Chance = total;
+            Context.WriteCurrentLeaderboardValues(leaderboard);
         }
 
         public static void MatchYatzy(List<int> dice)
         {
             if (dice.Distinct().Count() == 1)
             {
-                Leaderboard leaderboard = new Leaderboard();
+                Leaderboard leaderboard = Context.ReadCurrentLeaderboardValues();
                 leaderboard.Yatzy = 50;
                 Context.WriteCurrentLeaderboardValues(leaderboard);
             }
@@ -298,18 +368,6 @@ namespace ConsoleApp1
             {
                 Console.WriteLine("You do not have a Yatzy.");
             }
-        }
-
-        public static void CalculateScore(List<int> dice)
-        {
-            Leaderboard leaderboard = Context.ReadCurrentLeaderboardValues();
-            leaderboard.Ones = dice.Count(x => x == 1);
-            leaderboard.Twos = dice.Count(x => x == 2) * 2;
-            leaderboard.Threes = dice.Count(x => x == 3) * 3;
-            leaderboard.Fours = dice.Count(x => x == 4) * 4;
-            leaderboard.Fives = dice.Count(x => x == 5) * 5;
-            leaderboard.Sixes = dice.Count(x => x == 6) * 6;
-            Context.WriteCurrentLeaderboardValues(leaderboard);
         }
 
         public static void ResetLeaderboard()

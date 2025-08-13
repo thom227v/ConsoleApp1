@@ -1,4 +1,5 @@
-﻿using System.Numerics;
+﻿using ConsoleApp1.Models;
+using System.Numerics;
 using System.Text.RegularExpressions;
 using System.Threading.Channels;
 
@@ -86,7 +87,7 @@ namespace ConsoleApp1
 
             //Yatzy.PlayYatzy();
 
-            Console.WriteLine("Press 1 for Yatzy, 2 for reset leaderboard");
+            Console.WriteLine("Press 1 for Yatzy, 2 for reset leaderboard, 3 for calculating leaderboard score");
             switch (Console.ReadLine())
             {
                 case "1":
@@ -95,6 +96,10 @@ namespace ConsoleApp1
                 case "2":
                     Yatzy.ResetLeaderboard();
                     Console.WriteLine("Leaderboard has been reset.");
+                    return;
+                case "3":
+                    Leaderboard leaderboard = Context.ReadCurrentLeaderboardValues();
+                    Console.WriteLine(leaderboard.TotalScore);
                     return;
                 default:
                     Console.WriteLine("Invalid input, exiting...");
