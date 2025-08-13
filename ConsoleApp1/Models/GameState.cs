@@ -7,7 +7,6 @@ namespace ConsoleApp1.Models
     {
         public int game_id { get; set; }
         public string date { get; set; }
-        public string mode { get; set; } = "standard";
         public List<PlayerState> players { get; set; } = new List<PlayerState>();
     }
 

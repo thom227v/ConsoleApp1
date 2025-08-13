@@ -12,7 +12,6 @@ namespace ConsoleApp1
     {
         public static string GetCorrectInstrument()
         {
-            // Use Yatzy data directory instead of ReadDataFolder
             string directory = Path.Combine(Directory.GetCurrentDirectory(), "Yatzy", "Data");
             if (!Directory.Exists(directory))
                 Directory.CreateDirectory(directory);

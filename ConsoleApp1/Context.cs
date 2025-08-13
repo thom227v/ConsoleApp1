@@ -10,7 +10,7 @@ namespace ConsoleApp1
 {
     public class Context
     {
-        // Returns the path to the Yatzy data directory, creating it if it doesn't exist
+        // findes yatzy directory
         public static string GetYatzyDataDirectory()
         {
             string dir = Path.Combine(Directory.GetCurrentDirectory(), "Yatzy");
@@ -76,19 +76,28 @@ namespace ConsoleApp1
             return Path.Combine(dir, $"game_{gameId}.json");
         }
 
+
         public static void SaveGameState(GameState gameState)
         {
             string path = GetGameFilePath(gameState.game_id);
             string json = JsonSerializer.Serialize(gameState, new JsonSerializerOptions { WriteIndented = true });
-            File.WriteAllText(path, json);
+            using (StreamWriter writer = new StreamWriter(path))
+            {
+                writer.Write(json);
+            }
         }
 
+
+        // load gamestate or creates new gamestate
         public static GameState LoadGameState(int gameId)
         {
             string path = GetGameFilePath(gameId);
             if (!File.Exists(path)) return null;
-            string json = File.ReadAllText(path);
-            return JsonSerializer.Deserialize<GameState>(json);
+            using (StreamReader reader = new StreamReader(path))
+            {
+                string json = reader.ReadToEnd();
+                return JsonSerializer.Deserialize<GameState>(json);
+            }
         }
     }
 }

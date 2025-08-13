@@ -7,41 +7,55 @@ namespace ConsoleApp1
 {
     public class Yatzy
     {
-        // Refactored to accept GameState and play a full round for all categories
         public static void PlayYatzy(GameState gameState)
         {
-            string[] categories = new[] { "Ones", "Twos", "Threes", "Fours", "Fives", "Sixes", "Bonus", "Pair", "TwoPairs", "ThreeOfAKind", "FourOfAKind", "SmallStraight", "LargeStraight", "FullHouse", "Chance", "Yatzy" };
-            foreach (var category in categories)
+            int rounds = 15;
+            for (int round = 0; round < rounds; round++) // 15 rounds (15 choices on yatzy board)
             {
                 foreach (var player in gameState.players)
                 {
-                    Console.Write($"{player.name}, enter score for {category}: ");
-                    int score = 0;
-                    int.TryParse(Console.ReadLine(), out score);
-                    switch (category)
+                    Console.WriteLine($"\n--- {player.name}'s turn ---");   
+                    Die die = new Die();                                     // roll players first dice
+                    DisplayDice();
+                    int rerolls = 0;
+                    List<int> currentDice = Context.ReadCurrentDiceValues();
+                    while (rerolls < 5)
                     {
-                        case "Ones": player.choices.Ones = score; break;
-                        case "Twos": player.choices.Twos = score; break;
-                        case "Threes": player.choices.Threes = score; break;
-                        case "Fours": player.choices.Fours = score; break;
-                        case "Fives": player.choices.Fives = score; break;
-                        case "Sixes": player.choices.Sixes = score; break;
-                        case "Bonus": player.choices.Bonus = score; break;
-                        case "Pair": player.choices.Pair = score; break;
-                        case "TwoPairs": player.choices.TwoPairs = score; break;
-                        case "ThreeOfAKind": player.choices.ThreeOfAKind = score; break;
-                        case "FourOfAKind": player.choices.FourOfAKind = score; break;
-                        case "SmallStraight": player.choices.SmallStraight = score; break;
-                        case "LargeStraight": player.choices.LargeStraight = score; break;
-                        case "FullHouse": player.choices.FullHouse = score; break;
-                        case "Chance": player.choices.Chance = score; break;
-                        case "Yatzy": player.choices.Yatzy = score; break;
+                        Console.Write($"""
+                            {player.name}, Type \"reroll\" to reroll all dice, 
+                            "stop" to keep dice and score, 
+                            or enter dice to remove in index (example: 1 3 5):
+                            """);
+                        string input = Console.ReadLine();
+                        if (input.Trim().ToLower() == "stop") // if player ends game
+                        {
+                            GameChoosing(currentDice);
+                            break;
+                        }
+                        else if (input.Trim().ToLower() == "reroll") // if player rerolls all dice
+                        {
+                            die = new Die();
+                            currentDice = Context.ReadCurrentDiceValues();
+                            DisplayDice();
+                            rerolls++;
+                        }
+                        else // reroll dice using indexing
+                        {
+                            currentDice = MatchWhichDicesToRemove();
+                            die.DiceToRoll(0, currentDice); 
+                            currentDice = Context.ReadCurrentDiceValues();
+                            DisplayDice();
+                            rerolls++;
+                        }
                     }
-                    player.totalScore = player.choices.Ones + player.choices.Twos + player.choices.Threes + player.choices.Fours + player.choices.Fives + player.choices.Sixes + player.choices.Bonus + player.choices.Pair + player.choices.TwoPairs + player.choices.ThreeOfAKind + player.choices.FourOfAKind + player.choices.SmallStraight + player.choices.LargeStraight + player.choices.FullHouse + player.choices.Chance + player.choices.Yatzy;
+                    if (rerolls == 4) // if player is out of rerolls, force to make a choice
+                    {
+                        Console.WriteLine($"{player.name}, youu no more rolls left, please choose a category to score:");
+                        GameChoosing(currentDice);
+                    }
                     Context.SaveGameState(gameState);
                 }
             }
-            Console.WriteLine("All rounds complete. Game state saved.");
         }
 
         static List<int> MatchWhichDicesToRemove()
@@ -49,7 +63,7 @@ namespace ConsoleApp1
             List<int> dice = Context.ReadCurrentDiceValues();
             bool gameChoiceState = true;
             int[] inputNumbers = new int[0];
-            do
+            do // loop until player has choosen to stop removing dice
             {
                 Console.WriteLine("Which dice do you want to remove? (1-5), type stop to choose something to do");
                 string input = Console.ReadLine();
@@ -71,9 +85,9 @@ namespace ConsoleApp1
 
                 foreach (int inputValue in inputNumbers)
                 {
-                    try
+                    try // try and remove dice from list if it exists 
                     {
-                        dice.RemoveAt(inputValue - subtractAmount);
+                        dice.RemoveAt(inputValue - subtractAmount); 
                         subtractAmount++;
                         gameChoiceState = false;
                     }
@@ -158,7 +172,7 @@ namespace ConsoleApp1
                     MatchLargeStraight(dice);
                     return;
                 case "13":
-                    MatchFullHouse(dice); // need repair
+                    MatchFullHouse(dice);
                     return;
                 case "14":
                     MatchChance(dice);
@@ -168,7 +182,6 @@ namespace ConsoleApp1
                     return;
             }
         }
-
 
 
         public static void MatchTypes(int type, List<int> dice, Action<Leaderboard, int> setScore) // need research
@@ -226,7 +239,6 @@ namespace ConsoleApp1
                     Leaderboard leaderboard = Context.ReadCurrentLeaderboardValues();
                     leaderboard.TwoPairs = firstHighestPair * 2 + secondHighestPair * 2;
                     Context.WriteCurrentLeaderboardValues(leaderboard);
-
                 }
             }
         }
@@ -336,11 +348,11 @@ namespace ConsoleApp1
                     return;
                 }
             }
-                Leaderboard leaderboard = Context.ReadCurrentLeaderboardValues();
-                leaderboard.FullHouse = firstHighestNum * 2 + secondHighestNum * 3;
-                Context.WriteCurrentLeaderboardValues(leaderboard);
-                return;
-            }
+            Leaderboard leaderboard = Context.ReadCurrentLeaderboardValues();
+            leaderboard.FullHouse = firstHighestNum * 2 + secondHighestNum * 3;
+            Context.WriteCurrentLeaderboardValues(leaderboard);
+            return;
+        }
 
         public static void MatchChance(List<int> dice)
         {

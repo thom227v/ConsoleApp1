@@ -41,7 +41,12 @@ namespace ConsoleApp1
 
         public Die()
         {
-            Rolls = new List<int>() { 1, 1, 2, 2, 5 };
+            Random random = new Random();
+            Rolls = new int[5].ToList();
+            for (int i = 0; i < Rolls.Count(); i++)
+            {
+                Rolls[i] = random.Next(1, 7);
+            }
             Context.WriteToCurrentDiceValues(Rolls);
         }
 

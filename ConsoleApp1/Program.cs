@@ -9,32 +9,36 @@ namespace ConsoleApp1
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Enter game number to resume or start (e.g. 1):");
+            Console.WriteLine("Enter game number to resume or start (example: 1 for game_1):");
             string gameInput = Console.ReadLine();
             int gameId = 1;
-            if (!int.TryParse(gameInput, out gameId))
+
+            if (!int.TryParse(gameInput, out gameId)) // default to game 1 if input is invalid
             {
                 Console.WriteLine("Invalid input, using game 1.");
                 gameId = 1;
             }
 
             GameState gameState = Context.LoadGameState(gameId);
-            if (gameState == null)
+
+            if (gameState == null) // creates new gameState if LoadGameState returns null
             {
-                // New game setup
                 gameState = new GameState
                 {
                     game_id = gameId,
                     date = DateTime.Now.ToString("yyyy-MM-dd"),
-                    mode = "standard",
                     players = new List<PlayerState>()
                 };
+
                 Console.WriteLine("How many players? (2-8):");
                 int numPlayers = 2;
-                if (!int.TryParse(Console.ReadLine(), out numPlayers) || numPlayers < 2 || numPlayers > 8)
+
+                if (!int.TryParse(Console.ReadLine(), out numPlayers) || numPlayers < 2 || numPlayers > 8) // default to 2 players if input is invalid
                 {
+                    Console.WriteLine("Invalid input, 2 players game");
                     numPlayers = 2;
                 }
+
                 for (int i = 1; i <= numPlayers; i++)
                 {
                     Console.Write($"Enter name for player {i}: ");
@@ -45,7 +49,7 @@ namespace ConsoleApp1
             }
             else
             {
-                Console.WriteLine($"Loaded game {gameId} from {gameState.date} with {gameState.players.Count} players.");
+                Console.WriteLine($"Loaded game {gameId} from {gameState.date} with {gameState.players.Count} players."); // 'display information about game if loaded
             }
 
             Console.WriteLine("Press 1 for Yatzy, 2 for reset leaderboard, 3 for calculating leaderboard score, 4 for export leaderboard");
@@ -68,7 +72,7 @@ namespace ConsoleApp1
                     return;
                 default:
                     Console.WriteLine("Invalid input, exiting...");
-                    System.Threading.Thread.Sleep(2000);
+                    Thread.Sleep(2000);
                     return;
             }
         }
@@ -77,14 +81,14 @@ namespace ConsoleApp1
         {
             string dir = Context.GetYatzyDataDirectory();
             string csvPath = Path.Combine(dir, "leaderboard.csv");
-            bool writeHeader = !File.Exists(csvPath);
-            using (var writer = new StreamWriter(csvPath, append: true))
+            bool writeHeader = !File.Exists(csvPath); // if leaderboard csv does not exist, false
+            using (var writer = new StreamWriter(csvPath, append: true)) // write leaderboard.json data to csv
             {
                 if (writeHeader)
                     writer.WriteLine("game_id,date,player_id,player_name,totalScore");
                 foreach (var player in gameState.players)
                 {
-                    writer.WriteLine($"{gameState.game_id},{gameState.date},{player.id},{player.name.Replace(" ","")},{player.totalScore}");
+                    writer.WriteLine($"{gameState.game_id},{gameState.date},{player.id},{player.name.Replace(" ", "")},{player.totalScore}"); 
                 }
             }
         }

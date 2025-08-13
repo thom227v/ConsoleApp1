@@ -1,0 +1,7 @@
+Check if leaderboard is redundant
+
+Fix reroll (start using DiceToRoll() again)
+
+Find better fix if user wants to reroll using indexes (index better if the user wants to go for straights)
+
+reopening a game should not reset the game (unsure if does)

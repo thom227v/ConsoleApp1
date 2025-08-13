@@ -288,6 +288,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="bin\Debug\net8.0\Yatzy\game_1.json" />
+    <Content Include="bin\Debug\net8.0\Yatzy\game_2.json" />
     <Content Include="bin\Debug\net8.0\Yatzy\Leaderboard.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
