@@ -1,10 +1,8 @@
 ﻿using ConsoleApp1.Models;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 
@@ -12,134 +10,69 @@ namespace ConsoleApp1
 {
     public class Context
     {
-        public static string[] GetDataDirectory()
+        // Returns the path to the Yatzy data directory, creating it if it doesn't exist
+        public static string GetYatzyDataDirectory()
         {
-            string currentDirectory = Directory.GetCurrentDirectory();
-            return Directory.GetDirectories(currentDirectory);
+            string dir = Path.Combine(Directory.GetCurrentDirectory(), "Yatzy");
+            if (!Directory.Exists(dir))
+                Directory.CreateDirectory(dir);
+            return dir;
         }
 
-        public static string ReadDataFolder()
-        {
-            string[] currentDirectory = GetDataDirectory();
-
-            foreach (string dir in currentDirectory)
-            {
-                if (dir.Contains("Data"))
-                {
-                    return Path.Combine(dir, "Data");
-
-                }
-            }
-            return "Error finding diretory";
-        }
-
-
+        // dice data
         public static List<int> ReadCurrentDiceValues()
         {
-            string[] currentDirectory = GetDataDirectory();
-            string data = "";
-
-            foreach (string dir in currentDirectory)
-            {
-                if (dir.Contains("Yatzy"))
-                {
-                    string path = Path.Combine(dir, "CurrentDice.txt");
-
-                    using (StreamReader sr = new StreamReader(path))
-                    {
-                        data = sr.ReadToEnd();
-                    }
-                }
-            }
-
+            string dir = GetYatzyDataDirectory();
+            string path = Path.Combine(dir, "CurrentDice.txt");
+            if (!File.Exists(path))
+                return new List<int>();
+            string data = File.ReadAllText(path);
             List<int> diceValues = data.Split('\n')
                 .Where(x => !string.IsNullOrEmpty(x) && !x.StartsWith("#"))
                 .ToList().ConvertAll(int.Parse);
-            //List<string> diceValues = data.Split('\n').Skip(1).ToList();
-            //List<int> fixedList = diceValues.Select(x => x.Trim()).Where(x => !string.IsNullOrEmpty(x)).ToList().ConvertAll(int.Parse);
             return diceValues;
         }
 
-        public static Leaderboard ReadCurrentLeaderboardValues()
+        public static void WriteToCurrentDiceValues(List<int> dice)
         {
-            string[] currentDirectory = GetDataDirectory();
-            string data = "";
-
-            foreach (string dir in currentDirectory)
+            string dir = GetYatzyDataDirectory();
+            string filePath = Path.Combine(dir, "CurrentDice.txt");
+            using (StreamWriter writer = new StreamWriter(filePath))
             {
-                if (dir.Contains("Yatzy"))
+                foreach (int die in dice)
                 {
-                    string path = Path.Combine(dir, "Leaderboard.json");
-                    using (StreamReader sr = new StreamReader(path))
-                    {
-                        data = sr.ReadToEnd();
-                    }
+                    writer.WriteLine(die);
                 }
             }
+        }
+
+        // leaderboard data
+        public static Leaderboard ReadCurrentLeaderboardValues()
+        {
+            string dir = GetYatzyDataDirectory();
+            string path = Path.Combine(dir, "Leaderboard.json");
+            if (!File.Exists(path))
+                return new Leaderboard();
+            string data = File.ReadAllText(path);
             Leaderboard leaderboard = JsonSerializer.Deserialize<Leaderboard>(data);
             return leaderboard;
         }
 
         public static void WriteCurrentLeaderboardValues(Leaderboard leaderboard)
         {
-            string[] currentDirectory = GetDataDirectory();
-            foreach (string dir in currentDirectory)
+            string dir = GetYatzyDataDirectory();
+            string filePath = Path.Combine(dir, "Leaderboard.json");
+            string json = JsonSerializer.Serialize(leaderboard);
+            using (StreamWriter writer = new StreamWriter(filePath))
             {
-                if (dir.Contains("Yatzy"))
-                {
-                    string filePath = Path.Combine(dir, "Leaderboard.json");
-                    string json = JsonSerializer.Serialize(leaderboard);
-                    using (StreamWriter writer = new StreamWriter(filePath))
-                    {
-                        writer.WriteLine(json);
-                    }
-                }
+                writer.WriteLine(json);
             }
         }
 
-        public static void WriteToCurrentDiceValues(List<int> dice)
-        {
-            string[] currentDirectory = GetDataDirectory();
-            foreach (string dir in currentDirectory)
-            {
-                if (dir.Contains("Yatzy"))
-                {
-                    string filePath = Path.Combine(dir, "CurrentDice.txt");
-                    using (StreamWriter writer = new StreamWriter(filePath))
-                    {
-                        //writer.WriteLine(dice.Count());
-                        foreach (int die in dice)
-                        {
-                            writer.WriteLine(die);
-                        }
-                    }
-                }
-            }
-        }
-
-        public static int GetCurrentDiceAmount()
-        {
-            string[] currentDirectory = GetDataDirectory();
-            string line = "";
-            foreach (string dir in currentDirectory)
-            {
-                if (dir.Contains("Yatzy"))
-                {
-
-                    string path = Path.Combine(dir, "CurrentDice.txt");
-                    using (StreamReader sr = new StreamReader(path))
-                    {
-                        line = sr.ReadLine();
-                    }
-                }
-            }
-            return Convert.ToInt32(line);
-        }
-
-        // --- GameState Serialization Helpers ---
+        // gamestate data
         public static string GetGameFilePath(int gameId)
         {
-            string dir = Directory.GetCurrentDirectory();
+            string dir = GetYatzyDataDirectory();
             return Path.Combine(dir, $"game_{gameId}.json");
         }
 

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace ConsoleApp1
 {
@@ -11,7 +12,10 @@ namespace ConsoleApp1
     {
         public static string GetCorrectInstrument()
         {
-            string directory = Context.ReadDataFolder();
+            // Use Yatzy data directory instead of ReadDataFolder
+            string directory = Path.Combine(Directory.GetCurrentDirectory(), "Yatzy", "Data");
+            if (!Directory.Exists(directory))
+                Directory.CreateDirectory(directory);
             Console.Write("Hello dear user, please choose wisely which instrument you wise to play, 1 for clarient, 2 for flute-harp, 3 mbira or 4 for piano: ");
             switch (Console.ReadLine())
             {
@@ -24,11 +28,8 @@ namespace ConsoleApp1
                 case "4":
                     return Path.Combine(directory, "piano");
                 default:
-                    GetCorrectInstrument();
-                    break;
+                    return GetCorrectInstrument();
             }
-
-            return Path.Combine(directory, "piano"); //unreachable code, but needed to satisfy the compiler
         }
 
 

@@ -27,7 +27,7 @@ namespace ConsoleApp1
                     game_id = gameId,
                     date = DateTime.Now.ToString("yyyy-MM-dd"),
                     mode = "standard",
-                    players = new System.Collections.Generic.List<PlayerState>()
+                    players = new List<PlayerState>()
                 };
                 Console.WriteLine("How many players? (2-8):");
                 int numPlayers = 2;
@@ -75,7 +75,8 @@ namespace ConsoleApp1
 
         public static void ExportLeaderboardToCsv(GameState gameState)
         {
-            string csvPath = "leaderboard.csv";
+            string dir = Context.GetYatzyDataDirectory();
+            string csvPath = Path.Combine(dir, "leaderboard.csv");
             bool writeHeader = !File.Exists(csvPath);
             using (var writer = new StreamWriter(csvPath, append: true))
             {
