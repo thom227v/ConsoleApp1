@@ -11,7 +11,7 @@ namespace ConsoleApp1
     {
         public static string GetCorrectInstrument()
         {
-            string directory = Context.GetDataDirectory();
+            string directory = Context.ReadDataFolder();
             Console.Write("Hello dear user, please choose wisely which instrument you wise to play, 1 for clarient, 2 for flute-harp, 3 mbira or 4 for piano: ");
             switch (Console.ReadLine())
             {

@@ -1,5 +1,6 @@
 ﻿using System.Numerics;
 using System.Text.RegularExpressions;
+using System.Threading.Channels;
 
 namespace ConsoleApp1
 {
@@ -81,11 +82,27 @@ namespace ConsoleApp1
             //Console.WriteLine(Strings.CompressString("p555ppp7www"));
             //Die die = new Die(3);
             //Console.WriteLine(die.RollAmount);
-           Mozart.PlaySpecificFile();
+            //Mozart.PlaySpecificFile();
+
+            //Yatzy.PlayYatzy();
+
+            Console.WriteLine("Press 1 for Yatzy, 2 for reset leaderboard");
+            switch (Console.ReadLine())
+            {
+                case "1":
+                    Yatzy.PlayYatzy();
+                    break;
+                case "2":
+                    Yatzy.ResetLeaderboard();
+                    Console.WriteLine("Leaderboard has been reset.");
+                    return;
+                default:
+                    Console.WriteLine("Invalid input, exiting...");
+                    Thread.Sleep(2000);
+                    return;
+            }
+
         }
-
-
-
 
         static double AddAndMultiply(int first, int second, int third)
         {
@@ -219,6 +236,6 @@ namespace ConsoleApp1
         {
             return "\r\n1\t2\t3\t4\t5\t6\t7\t8\t9\t10\r\n2\t4\t6\t8\t10\t12\t14\t16\t18\t20\r\n3\t6\t9\t12\t15\t18\t21\t24\t27\t30\r\n4\t8\t12\t16\t20\t24\t28\t32\t36\t40\r\n5\t10\t15\t20\t25\t30\t35\t40\t45\t50\r\n6\t12\t18\t24\t30\t36\t42\t48\t54\t60\r\n7\t14\t21\t28\t35\t42\t49\t56\t63\t70\r\n8\t16\t24\t32\t40\t48\t56\t64\t72\t80\r\n9\t18\t27\t36\t45\t54\t63\t72\t81\t90\r\n10\t20\t30\t40\t50\t60\t70\t80\t90\t100\r\n";
         }
-       
+
     }
 }
