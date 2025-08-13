@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.Json;
@@ -133,6 +134,28 @@ namespace ConsoleApp1
                 }
             }
             return Convert.ToInt32(line);
+        }
+
+        // --- GameState Serialization Helpers ---
+        public static string GetGameFilePath(int gameId)
+        {
+            string dir = Directory.GetCurrentDirectory();
+            return Path.Combine(dir, $"game_{gameId}.json");
+        }
+
+        public static void SaveGameState(GameState gameState)
+        {
+            string path = GetGameFilePath(gameState.game_id);
+            string json = JsonSerializer.Serialize(gameState, new JsonSerializerOptions { WriteIndented = true });
+            File.WriteAllText(path, json);
+        }
+
+        public static GameState LoadGameState(int gameId)
+        {
+            string path = GetGameFilePath(gameId);
+            if (!File.Exists(path)) return null;
+            string json = File.ReadAllText(path);
+            return JsonSerializer.Deserialize<GameState>(json);
         }
     }
 }

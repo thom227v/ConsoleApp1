@@ -10,18 +10,14 @@ namespace ConsoleApp1
     public class Die
     {
         public int RollAmount { get; set; }
-
         public int CombinedRoll { get; set; }
-
         public List<int> Rolls { get; set; }
-
 
         public Die(int amount)
         {
             if (amount == 2)
             {
                 Random random = new Random();
-
                 CombinedRoll = random.Next(1, 7) + random.Next(1, 7);
             }
             else
@@ -34,7 +30,6 @@ namespace ConsoleApp1
                     for (int i = 0; i < amount; i++)
                     {
                         total += random.Next(1, 7);
-
                         RollAmount++;
                     }
                     if (total == (amount * 6))
@@ -44,23 +39,9 @@ namespace ConsoleApp1
             }
         }
 
-        //public Die()
-        //{
-        //    Random random = new Random();
-        //    CombinedRoll = random.Next(1, 7);
-        //}
-
         public Die()
         {
-            //Random random = new Random();
-            //Rolls = new int[5].ToList();
-            //for (int i = 0; i < Rolls.Count(); i++)
-            //{
-            //    Rolls[i] = random.Next(1, 7);
-            //}
-
             Rolls = new List<int>() { 1, 1, 2, 2, 5 };
-
             Context.WriteToCurrentDiceValues(Rolls);
         }
 
@@ -71,7 +52,7 @@ namespace ConsoleApp1
                 foreach (int roll in currentList)
                 {
                     int index = Array.IndexOf(currentList.ToArray(), roll);
-                    Console.WriteLine($"You rolled a {roll}" + "\tindex; " + index);
+                    Console.WriteLine($"You rolled a {roll}\tindex; {index}");
                 }
             }
 

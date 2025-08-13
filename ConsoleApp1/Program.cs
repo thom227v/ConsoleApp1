@@ -1,7 +1,7 @@
 ﻿using ConsoleApp1.Models;
-using System.Numerics;
-using System.Text.RegularExpressions;
-using System.Threading.Channels;
+using System;
+using System.IO;
+using System.Linq;
 
 namespace ConsoleApp1
 {
@@ -9,89 +9,50 @@ namespace ConsoleApp1
     {
         public static void Main(string[] args)
         {
-            //Console.WriteLine(AddAndMultiply(2, 4, 5));
-            //Console.WriteLine(CtoF(0));
-            //Console.WriteLine(CtoF(100));
-            //Console.WriteLine(CtoF(-300));
-            //Console.WriteLine(ElementaryOperations(3, 8));
-            //Console.WriteLine(IsResultTheSame(2 + 2, 2 * 2));
-            //Console.WriteLine(IsResultTheSame(9 / 3, 16 - 1));
-            //Console.WriteLine(ModuloOperations(8, 5, 2));
-            //Console.WriteLine(CubeOf(2));
-            //Console.WriteLine(CubeOf(-5.5));
-            //Console.WriteLine(SwapTwoNumbers(87, 45));
-            //Console.WriteLine(SwapTwoNumbers(-13, 2));
-            //Console.WriteLine(AbsoluteValue(6832));
-            //Console.WriteLine(AbsoluteValue(-392));
-            //Console.WriteLine(DivisibleBy2Or3(15, 30));
-            //Console.WriteLine(DivisibleBy2Or3(2, 90));
-            //Console.WriteLine(DivisibleBy2Or3(7, 12));
-            //Console.WriteLine(IfConsistsOfUppercaseLetters("xyz"));
-            //Console.WriteLine(IfConsistsOfUppercaseLetters("DOG"));
-            //Console.WriteLine(IfConsistsOfUppercaseLetters("L9#"));
-            //Console.WriteLine(IfGreaterThanThirdOne([2, 7, 12]));
-            //Console.WriteLine(IfGreaterThanThirdOne([-5, -8, 50]));
-            //Console.WriteLine(IfNumberIsEven(721));
-            //Console.WriteLine(IfNumberIsEven(1248));
-            //Console.WriteLine(IfSortedAscending([3, 7, 10]));
-            //Console.WriteLine(IfSortedAscending([74, 62, 99]));
-            //Console.WriteLine(PositiveNegativeOrZero(5.24));
-            //Console.WriteLine(PositiveNegativeOrZero(0.0));
-            //Console.WriteLine(PositiveNegativeOrZero(-994.53));
-            //Console.WriteLine(IfYearIsLeap(2016));
-            //Console.WriteLine(IfYearIsLeap(2018));
-            //Console.WriteLine(NumberTable());
-            //Console.WriteLine(Loops.TheBiggestNumber([190, 291, 145, 209, 280, 200]));
-            //Console.WriteLine(Loops.TheBiggestNumber([-9, -2, -7, -8, -4]));
-            //Console.WriteLine(Loops.Two7sNextToEachOther([8, 2, 5, 7, 9, 0, 7, 7, 3, 1]));
-            //Console.WriteLine(Loops.Two7sNextToEachOther([9, 4, 5, 3, 7, 7, 7, 3, 2, 5, 7, 7]));
-            //Console.WriteLine(Loops.ThreeIncreasingAdjacent([45, 23, 44, 68, 65, 70, 80, 81, 82]));
-            //Console.WriteLine(Loops.ThreeIncreasingAdjacent([7, 3, 5, 8, 9, 3, 1, 4]));
-            //int[] arr = Loops.SieveOfEratosthenes(30);
-            //foreach (int num in arr)
-            //{
-            //    Console.WriteLine(num + ", ");
-            //}
-            //Console.WriteLine(Loops.ExtractString("##abc##def"));
-            //Console.WriteLine(Loops.ExtractString("12####78"));
-            //Console.WriteLine(Loops.ExtractString("gar##d#en"));
-            //Console.WriteLine(Loops.ExtractString("++##--##++"));
-            ////Console.WriteLine(Loops.FullSequenceOfLetters("ds"));
-            ////Console.WriteLine(Loops.FullSequenceOfLetters("or"));
-            //Console.WriteLine(Loops.SumAndAverage(11, 66));
-            //Console.WriteLine(Loops.SumAndAverage(-10, 0));
-            ////Console.WriteLine(Loops.DrawTriangle());
-            //Console.WriteLine(Loops.ToThePowerOf(-2, 3));
-            //Console.WriteLine(Loops.ToThePowerOf(5, 5));
-            //Console.WriteLine(Strings.AddSeparator("ABCD", "^"));
-            //Console.WriteLine(Strings.AddSeparator("chocolate", "-"));
-            //Console.WriteLine(Strings.IsPalindrome("eye"));
-            //Console.WriteLine(Strings.IsPalindrome("home"));
-            //Console.WriteLine(Strings.LengthOfAString("computer"));
-            //Console.WriteLine(Strings.LengthOfAString("ice cream"));
-            //Console.WriteLine(Strings.StringInReverseOrder("qwerty"));
-            //Console.WriteLine(Strings.StringInReverseOrder("oe93 kr"));
-            //Console.WriteLine(Strings.NumberOfWords("This is sample sentence"));
-            //Console.WriteLine(Strings.NumberOfWords("OK"));
-            //Console.WriteLine(Strings.RevertWordsOrder("John Doe."));
-            //Console.WriteLine(Strings.RevertWordsOrder("A, B. C"));
-            //Console.WriteLine(Strings.HowManyOccurrences("do it now", "do"));
-            //Console.WriteLine(Strings.HowManyOccurrences("empty", "d"));
-            //Console.WriteLine(Strings.SortCharactersDescending("onomatopoeia"));
-            //Console.WriteLine(Strings.SortCharactersDescending("fohjwf42os"));
-            //Console.WriteLine(Strings.CompressString("kkkktttrrrrrrrrrr"));
-            //Console.WriteLine(Strings.CompressString("p555ppp7www"));
-            //Die die = new Die(3);
-            //Console.WriteLine(die.RollAmount);
-            //Mozart.PlaySpecificFile();
+            Console.WriteLine("Enter game number to resume or start (e.g. 1):");
+            string gameInput = Console.ReadLine();
+            int gameId = 1;
+            if (!int.TryParse(gameInput, out gameId))
+            {
+                Console.WriteLine("Invalid input, using game 1.");
+                gameId = 1;
+            }
 
-            //Yatzy.PlayYatzy();
+            GameState gameState = Context.LoadGameState(gameId);
+            if (gameState == null)
+            {
+                // New game setup
+                gameState = new GameState
+                {
+                    game_id = gameId,
+                    date = DateTime.Now.ToString("yyyy-MM-dd"),
+                    mode = "standard",
+                    players = new System.Collections.Generic.List<PlayerState>()
+                };
+                Console.WriteLine("How many players? (2-8):");
+                int numPlayers = 2;
+                if (!int.TryParse(Console.ReadLine(), out numPlayers) || numPlayers < 2 || numPlayers > 8)
+                {
+                    numPlayers = 2;
+                }
+                for (int i = 1; i <= numPlayers; i++)
+                {
+                    Console.Write($"Enter name for player {i}: ");
+                    string name = Console.ReadLine();
+                    gameState.players.Add(new PlayerState { id = $"p{i:00}", name = name });
+                }
+                Context.SaveGameState(gameState);
+            }
+            else
+            {
+                Console.WriteLine($"Loaded game {gameId} from {gameState.date} with {gameState.players.Count} players.");
+            }
 
-            Console.WriteLine("Press 1 for Yatzy, 2 for reset leaderboard, 3 for calculating leaderboard score");
+            Console.WriteLine("Press 1 for Yatzy, 2 for reset leaderboard, 3 for calculating leaderboard score, 4 for export leaderboard");
             switch (Console.ReadLine())
             {
                 case "1":
-                    Yatzy.PlayYatzy();
+                    Yatzy.PlayYatzy(gameState);
                     break;
                 case "2":
                     Yatzy.ResetLeaderboard();
@@ -101,12 +62,30 @@ namespace ConsoleApp1
                     Leaderboard leaderboard = Context.ReadCurrentLeaderboardValues();
                     Console.WriteLine(leaderboard.TotalScore);
                     return;
+                case "4":
+                    ExportLeaderboardToCsv(gameState);
+                    Console.WriteLine("Leaderboard exported to leaderboard.csv");
+                    return;
                 default:
                     Console.WriteLine("Invalid input, exiting...");
-                    Thread.Sleep(2000);
+                    System.Threading.Thread.Sleep(2000);
                     return;
             }
+        }
 
+        public static void ExportLeaderboardToCsv(GameState gameState)
+        {
+            string csvPath = "leaderboard.csv";
+            bool writeHeader = !File.Exists(csvPath);
+            using (var writer = new StreamWriter(csvPath, append: true))
+            {
+                if (writeHeader)
+                    writer.WriteLine("game_id,date,player_id,player_name,totalScore");
+                foreach (var player in gameState.players)
+                {
+                    writer.WriteLine($"{gameState.game_id},{gameState.date},{player.id},{player.name.Replace(" ","")},{player.totalScore}");
+                }
+            }
         }
 
         static double AddAndMultiply(int first, int second, int third)

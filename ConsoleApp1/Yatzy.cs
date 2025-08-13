@@ -1,53 +1,47 @@
 ﻿using ConsoleApp1.Models;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Globalization;
 using System.Linq;
-using System.Numerics;
-using System.Security.AccessControl;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Channels;
-using System.Threading.Tasks;
-using System.Xml;
 
 namespace ConsoleApp1
 {
     public class Yatzy
     {
-        public static void PlayYatzy()
+        // Refactored to accept GameState and play a full round for all categories
+        public static void PlayYatzy(GameState gameState)
         {
-
-            bool startGameStatus = true;
-            do
+            string[] categories = new[] { "Ones", "Twos", "Threes", "Fours", "Fives", "Sixes", "Bonus", "Pair", "TwoPairs", "ThreeOfAKind", "FourOfAKind", "SmallStraight", "LargeStraight", "FullHouse", "Chance", "Yatzy" };
+            foreach (var category in categories)
             {
-            Console.WriteLine("Enter number of players 2-8");
-            string input = Console.ReadLine();
-            if (int.TryParse(input), out int numberOfPlayers) && numberOfPlayers >= 2 && numberOfPlayers <= 8)
-            {
-                Context.WriteCurrentNumberOfPlayers(numberOfPlayers);
-                ResetLeaderboard();
-                StartGame();
+                foreach (var player in gameState.players)
+                {
+                    Console.Write($"{player.name}, enter score for {category}: ");
+                    int score = 0;
+                    int.TryParse(Console.ReadLine(), out score);
+                    switch (category)
+                    {
+                        case "Ones": player.choices.Ones = score; break;
+                        case "Twos": player.choices.Twos = score; break;
+                        case "Threes": player.choices.Threes = score; break;
+                        case "Fours": player.choices.Fours = score; break;
+                        case "Fives": player.choices.Fives = score; break;
+                        case "Sixes": player.choices.Sixes = score; break;
+                        case "Bonus": player.choices.Bonus = score; break;
+                        case "Pair": player.choices.Pair = score; break;
+                        case "TwoPairs": player.choices.TwoPairs = score; break;
+                        case "ThreeOfAKind": player.choices.ThreeOfAKind = score; break;
+                        case "FourOfAKind": player.choices.FourOfAKind = score; break;
+                        case "SmallStraight": player.choices.SmallStraight = score; break;
+                        case "LargeStraight": player.choices.LargeStraight = score; break;
+                        case "FullHouse": player.choices.FullHouse = score; break;
+                        case "Chance": player.choices.Chance = score; break;
+                        case "Yatzy": player.choices.Yatzy = score; break;
+                    }
+                    player.totalScore = player.choices.Ones + player.choices.Twos + player.choices.Threes + player.choices.Fours + player.choices.Fives + player.choices.Sixes + player.choices.Bonus + player.choices.Pair + player.choices.TwoPairs + player.choices.ThreeOfAKind + player.choices.FourOfAKind + player.choices.SmallStraight + player.choices.LargeStraight + player.choices.FullHouse + player.choices.Chance + player.choices.Yatzy;
+                    Context.SaveGameState(gameState);
+                }
             }
-            else
-            {
-                Console.WriteLine("Invalid input, please enter a number between 2 and 8.");
-                PlayYatzy();
-            }
-                
-            }
-            while (startGameStatus);
-
-
-            Die die = new Die();
-            int rollsLeft = 6;
-            for (int i = 0; i < rollsLeft; i++)
-            {
-                DisplayDice();
-                List<int> list = MatchWhichDicesToRemove();
-                die.DiceToRoll(list.Count(), list);
-            }
+            Console.WriteLine("All rounds complete. Game state saved.");
         }
 
         static List<int> MatchWhichDicesToRemove()
@@ -173,8 +167,8 @@ namespace ConsoleApp1
                     MatchYatzy(dice);
                     return;
             }
-            PlayYatzy();
         }
+
 
 
         public static void MatchTypes(int type, List<int> dice, Action<Leaderboard, int> setScore) // need research
