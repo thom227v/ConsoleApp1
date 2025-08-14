@@ -1,0 +1,10 @@
+Finish Rat
+Finish Bet class
+	Need Rat increment
+	Need RaceId 
+	Need Player information
+
+
+Finish Bookmaker
+Finish Race
+Finish RaceManager

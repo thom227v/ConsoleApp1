@@ -43,7 +43,7 @@ namespace ConsoleApp1
                 {
                     Console.Write($"Enter name for player {i}: ");
                     string name = Console.ReadLine();
-                    gameState.players.Add(new PlayerState { id = $"p{i:00}", name = name });
+                    gameState.players.Add(new PlayerState { id = $"p{i:00}", name = name }); // creating players to the gameState
                 }
                 Context.SaveGameState(gameState);
             }
@@ -67,29 +67,13 @@ namespace ConsoleApp1
                     Console.WriteLine(leaderboard.TotalScore);
                     return;
                 case "4":
-                    ExportLeaderboardToCsv(gameState);
+                    Context.ExportLeaderboardToCsv(gameState);
                     Console.WriteLine("Leaderboard exported to leaderboard.csv");
                     return;
                 default:
                     Console.WriteLine("Invalid input, exiting...");
                     Thread.Sleep(2000);
                     return;
-            }
-        }
-
-        public static void ExportLeaderboardToCsv(GameState gameState)
-        {
-            string dir = Context.GetYatzyDataDirectory();
-            string csvPath = Path.Combine(dir, "leaderboard.csv");
-            bool writeHeader = !File.Exists(csvPath); // if leaderboard csv does not exist, false
-            using (var writer = new StreamWriter(csvPath, append: true)) // write leaderboard.json data to csv
-            {
-                if (writeHeader)
-                    writer.WriteLine("game_id,date,player_id,player_name,totalScore");
-                foreach (var player in gameState.players)
-                {
-                    writer.WriteLine($"{gameState.game_id},{gameState.date},{player.id},{player.name.Replace(" ", "")},{player.totalScore}"); 
-                }
             }
         }
 

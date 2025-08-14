@@ -99,5 +99,23 @@ namespace ConsoleApp1
                 return JsonSerializer.Deserialize<GameState>(json);
             }
         }
+
+        public static void ExportLeaderboardToCsv(GameState gameState)
+        {
+            string dir = GetYatzyDataDirectory();
+            string csvPath = Path.Combine(dir, "leaderboard.csv");
+            bool writeHeader = !File.Exists(csvPath); // if leaderboard csv does not exist, false
+            using (var writer = new StreamWriter(csvPath, append: true)) // write leaderboard.json data to csv
+            {
+                if (writeHeader)
+                    writer.WriteLine("game_id,date,player_id,player_name,totalScore");
+                foreach (var player in gameState.players)
+                {
+                    writer.WriteLine($"{gameState.game_id},{gameState.date},{player.id},{player.name.Replace(" ", "")},{player.totalScore}");
+                }
+            }
+        }
+
+
     }
 }

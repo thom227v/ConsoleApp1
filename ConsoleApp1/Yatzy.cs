@@ -24,7 +24,7 @@ namespace ConsoleApp1
                         Console.Write($"""
                             {player.name}, Type \"reroll\" to reroll all dice, 
                             "stop" to keep dice and score, 
-                            or enter dice to remove in index (example: 1 3 5):
+                            or anything enter else to remove dice in index:
                             """);
                         string input = Console.ReadLine();
                         if (input.Trim().ToLower() == "stop") // if player ends game
@@ -42,7 +42,7 @@ namespace ConsoleApp1
                         else // reroll dice using indexing
                         {
                             currentDice = MatchWhichDicesToRemove();
-                            die.DiceToRoll(0, currentDice);
+                            die.DiceToRoll(currentDice.Count(), currentDice);
                             currentDice = Context.ReadCurrentDiceValues();
                             DisplayDice();
                             rerolls++;
@@ -256,197 +256,197 @@ namespace ConsoleApp1
             }
         }
 
-        public static void MatchTypes(int type, List<int> dice, Action<Leaderboard, int> setScore) // need research
-        {
-            int count = dice.Count(die => die == type);
-            Leaderboard leaderboard = Context.ReadCurrentLeaderboardValues();
-            setScore(leaderboard, count * type);
-            Context.WriteCurrentLeaderboardValues(leaderboard);
-        }
+        //public static void MatchTypes(int type, List<int> dice, Action<Leaderboard, int> setScore) // need research
+        //{
+        //    int count = dice.Count(die => die == type);
+        //    Leaderboard leaderboard = Context.ReadCurrentLeaderboardValues();
+        //    setScore(leaderboard, count * type);
+        //    Context.WriteCurrentLeaderboardValues(leaderboard);
+        //}
 
-        public static void MatchPairs(List<int> dice) // number 9 
-        {
-            int highestPair = 0;
-            for (int i = 6; i >= 1; i--)
-            {
-                if (dice.Count(x => x == i) >= 2)
-                {
-                    highestPair = i;
-                    Leaderboard leaderboard = Context.ReadCurrentLeaderboardValues();
-                    leaderboard.Pair = highestPair * 2;
-                    Context.WriteCurrentLeaderboardValues(leaderboard);
-                    break;
-                }
-            }
-        }
+        //public static void MatchPairs(List<int> dice) // number 9 
+        //{
+        //    int highestPair = 0;
+        //    for (int i = 6; i >= 1; i--)
+        //    {
+        //        if (dice.Count(x => x == i) >= 2)
+        //        {
+        //            highestPair = i;
+        //            Leaderboard leaderboard = Context.ReadCurrentLeaderboardValues();
+        //            leaderboard.Pair = highestPair * 2;
+        //            Context.WriteCurrentLeaderboardValues(leaderboard);
+        //            break;
+        //        }
+        //    }
+        //}
 
-        public static void MatchTwoPairs(List<int> dice)
-        {
-            int firstHighestPair = 0;
-            for (int i = 6; i >= 1; i--)
-            {
-                if (dice.Count(x => x == i) >= 2)
-                {
-                    firstHighestPair = i;
-                    break;
-                }
-            }
+        //public static void MatchTwoPairs(List<int> dice)
+        //{
+        //    int firstHighestPair = 0;
+        //    for (int i = 6; i >= 1; i--)
+        //    {
+        //        if (dice.Count(x => x == i) >= 2)
+        //        {
+        //            firstHighestPair = i;
+        //            break;
+        //        }
+        //    }
 
-            int secondHighestPair = 0;
-            for (int i = firstHighestPair - 1; i >= 1; i--)
-            {
-                if (dice.Count(x => x == i) >= 2)
-                {
-                    secondHighestPair = i;
-                    break;
-                }
-            }
+        //    int secondHighestPair = 0;
+        //    for (int i = firstHighestPair - 1; i >= 1; i--)
+        //    {
+        //        if (dice.Count(x => x == i) >= 2)
+        //        {
+        //            secondHighestPair = i;
+        //            break;
+        //        }
+        //    }
 
-            if (firstHighestPair is not 0 && secondHighestPair is not 0)
-            {
-                int firstCount = dice.Count(x => x == firstHighestPair);
-                int secondCount = dice.Count(x => x == secondHighestPair);
-                if (firstCount >= 2 && secondCount >= 2)
-                {
-                    Leaderboard leaderboard = Context.ReadCurrentLeaderboardValues();
-                    leaderboard.TwoPairs = firstHighestPair * 2 + secondHighestPair * 2;
-                    Context.WriteCurrentLeaderboardValues(leaderboard);
-                }
-            }
-        }
-        public static void MatchThreeOfAKind(List<int> dice)
-        {
-            int highest = 0;
-            for (int i = 6; i >= 1; i--)
-            {
-                if (dice.Count(x => x == i) >= 3)
-                {
-                    highest = i;
-                    Leaderboard leaderboard = Context.ReadCurrentLeaderboardValues();
-                    leaderboard.ThreeOfAKind = highest * 3;
-                    Context.WriteCurrentLeaderboardValues(leaderboard);
-                    break;
-                }
-            }
-        }
+        //    if (firstHighestPair is not 0 && secondHighestPair is not 0)
+        //    {
+        //        int firstCount = dice.Count(x => x == firstHighestPair);
+        //        int secondCount = dice.Count(x => x == secondHighestPair);
+        //        if (firstCount >= 2 && secondCount >= 2)
+        //        {
+        //            Leaderboard leaderboard = Context.ReadCurrentLeaderboardValues();
+        //            leaderboard.TwoPairs = firstHighestPair * 2 + secondHighestPair * 2;
+        //            Context.WriteCurrentLeaderboardValues(leaderboard);
+        //        }
+        //    }
+        //}
+        //public static void MatchThreeOfAKind(List<int> dice)
+        //{
+        //    int highest = 0;
+        //    for (int i = 6; i >= 1; i--)
+        //    {
+        //        if (dice.Count(x => x == i) >= 3)
+        //        {
+        //            highest = i;
+        //            Leaderboard leaderboard = Context.ReadCurrentLeaderboardValues();
+        //            leaderboard.ThreeOfAKind = highest * 3;
+        //            Context.WriteCurrentLeaderboardValues(leaderboard);
+        //            break;
+        //        }
+        //    }
+        //}
 
-        public static void MatchFourOfAKind(List<int> dice)
-        {
-            int highest = 0;
-            for (int i = 6; i >= 1; i--)
-            {
-                if (dice.Count(x => x == i) >= 4)
-                {
-                    highest = i;
-                    Leaderboard leaderboard = Context.ReadCurrentLeaderboardValues();
-                    leaderboard.FourOfAKind = highest * 4;
-                    Context.WriteCurrentLeaderboardValues(leaderboard);
-                    break;
-                }
-            }
-        }
+        //public static void MatchFourOfAKind(List<int> dice)
+        //{
+        //    int highest = 0;
+        //    for (int i = 6; i >= 1; i--)
+        //    {
+        //        if (dice.Count(x => x == i) >= 4)
+        //        {
+        //            highest = i;
+        //            Leaderboard leaderboard = Context.ReadCurrentLeaderboardValues();
+        //            leaderboard.FourOfAKind = highest * 4;
+        //            Context.WriteCurrentLeaderboardValues(leaderboard);
+        //            break;
+        //        }
+        //    }
+        //}
 
-        public static void MatchSmallStraight(List<int> dice)
-        {
-            List<int> smallStraight = new List<int> { 1, 2, 3, 4, 5 };
-            if (smallStraight.All(dice.Contains))
-            {
-                Leaderboard leaderboard = Context.ReadCurrentLeaderboardValues();
-                leaderboard.SmallStraight = 1 + 2 + 3 + 4 + 5;
-                Context.WriteCurrentLeaderboardValues(leaderboard);
-            }
-        }
+        //public static void MatchSmallStraight(List<int> dice)
+        //{
+        //    List<int> smallStraight = new List<int> { 1, 2, 3, 4, 5 };
+        //    if (smallStraight.All(dice.Contains))
+        //    {
+        //        Leaderboard leaderboard = Context.ReadCurrentLeaderboardValues();
+        //        leaderboard.SmallStraight = 1 + 2 + 3 + 4 + 5;
+        //        Context.WriteCurrentLeaderboardValues(leaderboard);
+        //    }
+        //}
 
-        public static void MatchLargeStraight(List<int> dice)
-        {
-            List<int> largeStraight = new List<int> { 2, 3, 4, 5, 6 };
-            if (largeStraight.All(dice.Contains))
-            {
-                Leaderboard leaderboard = Context.ReadCurrentLeaderboardValues();
-                leaderboard.LargeStraight = 2 + 3 + 4 + 5 + 6;
-                Context.WriteCurrentLeaderboardValues(leaderboard);
-            }
-        }
+        //public static void MatchLargeStraight(List<int> dice)
+        //{
+        //    List<int> largeStraight = new List<int> { 2, 3, 4, 5, 6 };
+        //    if (largeStraight.All(dice.Contains))
+        //    {
+        //        Leaderboard leaderboard = Context.ReadCurrentLeaderboardValues();
+        //        leaderboard.LargeStraight = 2 + 3 + 4 + 5 + 6;
+        //        Context.WriteCurrentLeaderboardValues(leaderboard);
+        //    }
+        //}
 
-        public static void MatchFullHouse(List<int> dice)
-        {
-            int firstHighestNum = 0;
-            for (int i = 6; i >= 1; i--)
-            {
-                if (dice.Count(x => x == i) >= 2)
-                {
-                    firstHighestNum = i;
-                }
-            }
-            int secondHighestNum = 0;
-            for (int i = firstHighestNum; i >= 1; i--)
-            {
-                if (dice.Count(x => x == i) >= 3)
-                {
-                    secondHighestNum = i;
+        //public static void MatchFullHouse(List<int> dice)
+        //{
+        //    int firstHighestNum = 0;
+        //    for (int i = 6; i >= 1; i--)
+        //    {
+        //        if (dice.Count(x => x == i) >= 2)
+        //        {
+        //            firstHighestNum = i;
+        //        }
+        //    }
+        //    int secondHighestNum = 0;
+        //    for (int i = firstHighestNum; i >= 1; i--)
+        //    {
+        //        if (dice.Count(x => x == i) >= 3)
+        //        {
+        //            secondHighestNum = i;
 
-                }
-            }
+        //        }
+        //    }
 
-            if (firstHighestNum == 0 || secondHighestNum == 0)
-            {
-                int firstHighestNum2 = 0;
-                for (int i = 6; i >= 1; i--)
-                {
-                    if (dice.Count(x => x == i) >= 3)
-                    {
-                        firstHighestNum2 = i;
-                    }
-                }
-                int secondHighestNum2 = 0;
-                for (int i = firstHighestNum2; i >= 1; i--)
-                {
-                    if (dice.Count(x => x == i) >= 2)
-                    {
-                        secondHighestNum2 = i;
-                    }
-                }
+        //    if (firstHighestNum == 0 || secondHighestNum == 0)
+        //    {
+        //        int firstHighestNum2 = 0;
+        //        for (int i = 6; i >= 1; i--)
+        //        {
+        //            if (dice.Count(x => x == i) >= 3)
+        //            {
+        //                firstHighestNum2 = i;
+        //            }
+        //        }
+        //        int secondHighestNum2 = 0;
+        //        for (int i = firstHighestNum2; i >= 1; i--)
+        //        {
+        //            if (dice.Count(x => x == i) >= 2)
+        //            {
+        //                secondHighestNum2 = i;
+        //            }
+        //        }
 
-                if (firstHighestNum2 == 0 || secondHighestNum2 == 0)
-                {
-                    Console.WriteLine("You do not have a full house.");
-                    return;
-                }
-                else
-                {
-                    Leaderboard leaderboard2 = Context.ReadCurrentLeaderboardValues();
-                    leaderboard2.FullHouse = firstHighestNum2 * 3 + secondHighestNum2 * 2;
-                    Context.WriteCurrentLeaderboardValues(leaderboard2);
-                    return;
-                }
-            }
-            Leaderboard leaderboard = Context.ReadCurrentLeaderboardValues();
-            leaderboard.FullHouse = firstHighestNum * 2 + secondHighestNum * 3;
-            Context.WriteCurrentLeaderboardValues(leaderboard);
-            return;
-        }
+        //        if (firstHighestNum2 == 0 || secondHighestNum2 == 0)
+        //        {
+        //            Console.WriteLine("You do not have a full house.");
+        //            return;
+        //        }
+        //        else
+        //        {
+        //            Leaderboard leaderboard2 = Context.ReadCurrentLeaderboardValues();
+        //            leaderboard2.FullHouse = firstHighestNum2 * 3 + secondHighestNum2 * 2;
+        //            Context.WriteCurrentLeaderboardValues(leaderboard2);
+        //            return;
+        //        }
+        //    }
+        //    Leaderboard leaderboard = Context.ReadCurrentLeaderboardValues();
+        //    leaderboard.FullHouse = firstHighestNum * 2 + secondHighestNum * 3;
+        //    Context.WriteCurrentLeaderboardValues(leaderboard);
+        //    return;
+        //}
 
-        public static void MatchChance(List<int> dice)
-        {
-            int total = dice.Sum();
-            Leaderboard leaderboard = Context.ReadCurrentLeaderboardValues();
-            leaderboard.Chance = total;
-            Context.WriteCurrentLeaderboardValues(leaderboard);
-        }
+        //public static void MatchChance(List<int> dice)
+        //{
+        //    int total = dice.Sum();
+        //    Leaderboard leaderboard = Context.ReadCurrentLeaderboardValues();
+        //    leaderboard.Chance = total;
+        //    Context.WriteCurrentLeaderboardValues(leaderboard);
+        //}
 
-        public static void MatchYatzy(List<int> dice)
-        {
-            if (dice.Distinct().Count() == 1)
-            {
-                Leaderboard leaderboard = Context.ReadCurrentLeaderboardValues();
-                leaderboard.Yatzy = 50;
-                Context.WriteCurrentLeaderboardValues(leaderboard);
-            }
-            else
-            {
-                Console.WriteLine("You do not have a Yatzy.");
-            }
-        }
+        //public static void MatchYatzy(List<int> dice)
+        //{
+        //    if (dice.Distinct().Count() == 1)
+        //    {
+        //        Leaderboard leaderboard = Context.ReadCurrentLeaderboardValues();
+        //        leaderboard.Yatzy = 50;
+        //        Context.WriteCurrentLeaderboardValues(leaderboard);
+        //    }
+        //    else
+        //    {
+        //        Console.WriteLine("You do not have a Yatzy.");
+        //    }
+        //}
 
         public static void ResetLeaderboard()
         {
