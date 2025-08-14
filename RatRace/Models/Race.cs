@@ -21,12 +21,13 @@ namespace RatRace.Models
 
         public Rat GetWinner()
         {
+            return null;
 
         }
 
         public string GetRaceReport()
         {
-
+            return null;
         }
 
         private void LogRace()

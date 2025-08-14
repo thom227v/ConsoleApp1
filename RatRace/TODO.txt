@@ -8,3 +8,6 @@ Finish Bet class
 Finish Bookmaker
 Finish Race
 Finish RaceManager
+
+
+use humanizer for saying first person, first rat and so on

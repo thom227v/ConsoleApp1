@@ -8,10 +8,10 @@ namespace RatRace.Models
 {
     public class RaceManager
     {
-        public List<Track> Tracks { get; set; }
-        public List<Player> Players { get; set; }
-        public List<Race> Races { get; set; }
-        public List<Rat> Rats { get; set; }
+        public List<Track> Tracks { get; set; } = new List<Track>();
+        public List<Player> Players { get; set; } = new List<Player>();
+        public List<Race> Races { get; set; } = new List<Race>();
+        public List<Rat> Rats { get; set; } = new List<Rat>();
 
         public Race CreateRace(int raceId, List<Rat> rats, Track track)
         {
@@ -39,15 +39,16 @@ namespace RatRace.Models
 
         public string ViewRaceReport(Race race)
         {
+            return null;
 
         }
 
-        public Rat CreateRat(string name)
+        public Rat CreateRat(string name, int position)
         {
             return new Rat
             {
                 Name = name,
-                Position = 0,
+                Position = position,
             };
         }
 
