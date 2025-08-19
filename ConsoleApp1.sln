@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RatRace", "RatRace\RatRace.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OOP", "OOP\OOP.csproj", "{38556819-9F57-4FEE-8427-548BF54FD3EA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterfacesTasks", "InterfacesTasks\InterfacesTasks.csproj", "{4C40B96F-F1E1-4B62-AD2D-45747D9167F8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{38556819-9F57-4FEE-8427-548BF54FD3EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{38556819-9F57-4FEE-8427-548BF54FD3EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{38556819-9F57-4FEE-8427-548BF54FD3EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C40B96F-F1E1-4B62-AD2D-45747D9167F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C40B96F-F1E1-4B62-AD2D-45747D9167F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C40B96F-F1E1-4B62-AD2D-45747D9167F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C40B96F-F1E1-4B62-AD2D-45747D9167F8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
